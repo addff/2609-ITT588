@@ -23,11 +23,15 @@ sudo docker images
 pwd
 ```
 
-ok dah ada image nama kelassir/ruby:1.0 kita nak pakai image tu pada new container. so kita siapkan Dockerfile baru dan yaml docker-compose. Dockerfile lama tadi kita dah guna runkan masuk ke dalam sir_tmp kan. so yang tu kita archive kan dia, so saya move ke dalam folder works. first thing first kena own folder ruby_app1 tu dulu. kalau user nama sir ...
+ok dah ada image nama kelassir/ruby:1.0 kita nak pakai image tu pada new container. so kita siapkan Dockerfile baru dan yaml docker-compose. Dockerfile lama tadi kita dah guna runkan masuk ke dalam sir_tmp kan. so yang tu kita archive kan dia sekali dengan config/database.yml, so saya move ke dalam folder works. first thing first kena own folder ruby_app1 tu dulu. kalau user nama sir ...
 
 ```
 #!/bin/bash
 sudo chown -R sir .
 ls -l ..
+mkdir works
 ls -l
+mv Dockerfile works
+mv config/database.yml works
+ls
 ```
