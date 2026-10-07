@@ -68,6 +68,6 @@ services:
             - "3003:3000"
         command: bash -c "/rails/ruby_app1/bin/rails server -b 0.0.0.0"
 ```
-
+check dekat browser ip_address:3003 pula. InsyaAllah dapat up front page.
 ok selesai. alhamdulillah.
 
