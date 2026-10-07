@@ -35,3 +35,16 @@ mv Dockerfile works
 mv config/database.yml works
 ls
 ```
+jom try tukar dalam file config/environments/development.rb pula, kalau permission dah tukar kita boleh rewrite file ni. lepas tukar kita kena rebuild lagi sekali untuk replace Gemfile.lock.
+ok kita tukar cache management kita pakai redis, jom. tukar baris ni
+```
+config.cache_store = :redis_cache_store, { url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } }
+```
+rebuild lagi sekali untuk owerwrite Gemfile.lock
+```
+#!/bin/bash
+docker run --rm -v .:/app -w /app ruby:3.3 bundle lock
+```
+
+next buat Dockerfile dan docker-compose.yml untuk ruby_app kita guna folder yang dah berjaya dijana dan teruskan mengedit ruby_app kepada web app yang dikehendaki.
+
